@@ -1,0 +1,242 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>RestOC.REST module &#8212; RestOC 0.4.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-RestOC.REST">
+<span id="restoc-rest-module"></span><h1>RestOC.REST module<a class="headerlink" href="#module-RestOC.REST" title="Permalink to this headline">¶</a></h1>
+<p>REST Module</p>
+<p>Provides interfaces for creating and maintaining REST servers</p>
+<dl class="py class">
+<dt id="RestOC.REST.Config">
+<em class="property">class </em><code class="sig-prename descclassname">RestOC.REST.</code><code class="sig-name descname">Config</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conf</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.REST.Config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Config class</p>
+<p>Represents configuration data for connecting to/loading services</p>
+<dl class="py method">
+<dt id="RestOC.REST.Config.__contains__">
+<code class="sig-name descname">__contains__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">service</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.REST.Config.__contains__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Python magic method for checking a key exists in a dict like object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>service</strong> (<em>str</em>) – The service to check for</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.REST.Config.__getitem__">
+<code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">service</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.REST.Config.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Python magic method for getting a key from a dict like object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{str}</strong> (<em>service</em>) – The service config to return</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>KeyError</strong> – </p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>mixed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.REST.Config.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conf</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.REST.Config.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor</p>
+<p>Initialises the instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>{dict}</strong> (<em>conf</em>) – The configuration data for compiling the list of
+services and loaders</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Config</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.REST.Config.__iter__">
+<code class="sig-name descname">__iter__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.REST.Config.__iter__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Python magic method to return an iterator for the instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>iterator</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.REST.Config.__str__">
+<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.REST.Config.__str__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Python magic method to return a string for the instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.REST.Config.keys">
+<code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.REST.Config.keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>services</p>
+<p>Returns the keys (services) in the instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>str[]</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="RestOC.REST.Server">
+<em class="property">class </em><code class="sig-prename descclassname">RestOC.REST.</code><code class="sig-name descname">Server</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">routes</span></em>, <em class="sig-param"><span class="n">service</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">cors</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.REST.Server" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">bottle.Bottle</span></code></p>
+<p>Creates an HTTP server for use with REST requests</p>
+<dl class="py method">
+<dt id="RestOC.REST.Server.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">routes</span></em>, <em class="sig-param"><span class="n">service</span><span class="o">=</span><span class="default_value">''</span></em>, <em class="sig-param"><span class="n">cors</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.REST.Server.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor (__init__)</p>
+<p>Instantiates the server instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>routes</strong> (<em>dict|list</em>) – Routes to the server</p></li>
+<li><p><strong>service</strong> (<em>str</em>) – The service to use if none exists in a route</p></li>
+<li><p><strong>cors</strong> (<em>str</em>) – The regex to identify allowed domains</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.REST.Server.run">
+<code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">server</span><span class="o">=</span><span class="default_value">'gunicorn'</span></em>, <em class="sig-param"><span class="n">host</span><span class="o">=</span><span class="default_value">'127.0.0.1'</span></em>, <em class="sig-param"><span class="n">port</span><span class="o">=</span><span class="default_value">8080</span></em>, <em class="sig-param"><span class="n">reloader</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">interval</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">quiet</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">plugins</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">debug</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">maxfile</span><span class="o">=</span><span class="default_value">20971520</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kargs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.REST.Server.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run</p>
+<p>Overrides Bottle’s run to default gunicorn and other fields</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>server</strong> (<em>str</em>) – Server adapter to use</p></li>
+<li><p><strong>host</strong> (<em>str</em>) – Server address to bind to</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – Server port to bind to</p></li>
+<li><p><strong>reloader</strong> (<em>bool</em>) – Start auto-reloading server?</p></li>
+<li><p><strong>interval</strong> (<em>int</em>) – Auto-reloader interval in seconds</p></li>
+<li><p><strong>quiet</strong> (<em>bool</em>) – Suppress output to stdout and stderr?</p></li>
+<li><p><strong>plugins</strong> (<em>list</em>) – List of plugins to the server</p></li>
+<li><p><strong>debug</strong> (<em>bool</em>) – Debug mode</p></li>
+<li><p><strong>maxfile</strong> (<em>int</em>) – Maximum size of requests</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">RestOC</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, OuroborosCoding.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/RestOC.REST.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

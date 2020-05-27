@@ -1,0 +1,171 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>RestOC.CLI module &#8212; RestOC 0.4.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-RestOC.CLI">
+<span id="restoc-cli-module"></span><h1>RestOC.CLI module<a class="headerlink" href="#module-RestOC.CLI" title="Permalink to this headline">¶</a></h1>
+<p>CLI Module</p>
+<p>Holds methods for doing CLI things</p>
+<dl class="py class">
+<dt id="RestOC.CLI.ProgressBar">
+<em class="property">class </em><code class="sig-prename descclassname">RestOC.CLI.</code><code class="sig-name descname">ProgressBar</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">'Progress Bar'</span></em>, <em class="sig-param"><span class="n">total</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">sections</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.CLI.ProgressBar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Progress Bar</p>
+<p>Generates a progress bar for use in terminals</p>
+<dl class="py method">
+<dt id="RestOC.CLI.ProgressBar.__add__">
+<code class="sig-name descname">__add__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">other</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.CLI.ProgressBar.__add__" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li><p>(overloaded)</p></li>
+</ul>
+<p>Handles adding to the count</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>other</strong> (<em>uint</em>) – Should be an unsigned number</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.CLI.ProgressBar.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">title</span><span class="o">=</span><span class="default_value">'Progress Bar'</span></em>, <em class="sig-param"><span class="n">total</span><span class="o">=</span><span class="default_value">100</span></em>, <em class="sig-param"><span class="n">sections</span><span class="o">=</span><span class="default_value">20</span></em>, <em class="sig-param"><span class="n">start</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.CLI.ProgressBar.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor</p>
+<p>Initialises the instance of the object</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>title</strong> (<em>str</em>) – The text before the progress bar</p></li>
+<li><p><strong>total</strong> (<em>int</em>) – The total count of items</p></li>
+<li><p><strong>sections</strong> (<em>int</em>) – The number of sections in the progress bar</p></li>
+<li><p><strong>start</strong> (<em>int</em>) – Optional, defaults to 0</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>ProgressBar</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.CLI.ProgressBar.clear">
+<code class="sig-name descname">clear</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.CLI.ProgressBar.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear</p>
+<p>Clears the screen</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.CLI.ProgressBar.draw">
+<code class="sig-name descname">draw</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.CLI.ProgressBar.draw" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw</p>
+<p>Draws the progress bar in the terminal</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">RestOC</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, OuroborosCoding.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/RestOC.CLI.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>RestOC.Resize module &#8212; RestOC 0.4.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-RestOC.Resize">
+<span id="restoc-resize-module"></span><h1>RestOC.Resize module<a class="headerlink" href="#module-RestOC.Resize" title="Permalink to this headline">¶</a></h1>
+<p>Resize</p>
+<p>Common functions for resizing dimensions to fit, to crop, etc</p>
+<dl class="py function">
+<dt id="RestOC.Resize.crop">
+<code class="sig-prename descclassname">RestOC.Resize.</code><code class="sig-name descname">crop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">w</span></em>, <em class="sig-param"><span class="n">h</span></em>, <em class="sig-param"><span class="n">bw</span></em>, <em class="sig-param"><span class="n">bh</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Resize.crop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Crop</p>
+<p>Makes sure one side fits and crops the other</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>w</strong> (<em>int</em>) – The current width</p></li>
+<li><p><strong>h</strong> (<em>int</em>) – The current height</p></li>
+<li><p><strong>bw</strong> (<em>int</em>) – The boundary width</p></li>
+<li><p><strong>bh</strong> (<em>int</em>) – The boundary height</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.Resize.fit">
+<code class="sig-prename descclassname">RestOC.Resize.</code><code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">w</span></em>, <em class="sig-param"><span class="n">h</span></em>, <em class="sig-param"><span class="n">bw</span></em>, <em class="sig-param"><span class="n">bh</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Resize.fit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fit</p>
+<p>Makes sure one side fits and makes the other smaller than necessary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>w</strong> (<em>int</em>) – The current width</p></li>
+<li><p><strong>h</strong> (<em>int</em>) – The current height</p></li>
+<li><p><strong>bw</strong> (<em>int</em>) – The boundary width</p></li>
+<li><p><strong>bh</strong> (<em>int</em>) – The boundary height</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list [w, h]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.Resize.region">
+<code class="sig-prename descclassname">RestOC.Resize.</code><code class="sig-name descname">region</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">w</span></em>, <em class="sig-param"><span class="n">h</span></em>, <em class="sig-param"><span class="n">bw</span></em>, <em class="sig-param"><span class="n">bh</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Resize.region" title="Permalink to this definition">¶</a></dt>
+<dd><p>Region</p>
+<p>Returns a new set of region points based on a current width and height and
+the bounding box</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>w</strong> (<em>int</em>) – The current width</p></li>
+<li><p><strong>h</strong> (<em>int</em>) – The current height</p></li>
+<li><p><strong>bw</strong> (<em>int</em>) – The boundary width</p></li>
+<li><p><strong>bh</strong> (<em>int</em>) – The boundary height</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">RestOC</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, OuroborosCoding.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/RestOC.Resize.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

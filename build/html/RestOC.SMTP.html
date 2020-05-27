@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>RestOC.SMTP module &#8212; RestOC 0.4.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-RestOC.SMTP">
+<span id="restoc-smtp-module"></span><h1>RestOC.SMTP module<a class="headerlink" href="#module-RestOC.SMTP" title="Permalink to this headline">¶</a></h1>
+<p>SMTP</p>
+<p>Wrapper for python smtp module</p>
+<dl class="py function">
+<dt id="RestOC.SMTP.init">
+<code class="sig-prename descclassname">RestOC.SMTP.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span><span class="o">=</span><span class="default_value">'localhost'</span></em>, <em class="sig-param"><span class="n">port</span><span class="o">=</span><span class="default_value">25</span></em>, <em class="sig-param"><span class="n">tls</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">user</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">passwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.SMTP.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called to change/set any SMTP information before sending out any e-mails</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – The hostname of the SMTP server</p></li>
+<li><p><strong>port</strong> (<em>uint</em>) – The port on the host</p></li>
+<li><p><strong>tls</strong> (<em>bool</em>) – Set to True if we need TLS</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – The authorization username</p></li>
+<li><p><strong>passwd</strong> (<em>str</em>) – The authorization password</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.SMTP.lastError">
+<code class="sig-prename descclassname">RestOC.SMTP.</code><code class="sig-name descname">lastError</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.SMTP.lastError" title="Permalink to this definition">¶</a></dt>
+<dd><p>Last Error</p>
+<p>Returns the last error message if there is one</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.SMTP.send">
+<code class="sig-prename descclassname">RestOC.SMTP.</code><code class="sig-name descname">send</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">to</span></em>, <em class="sig-param"><span class="n">subject</span></em>, <em class="sig-param"><span class="n">text_body</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">html_body</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">from_</span><span class="o">=</span><span class="default_value">'root&#64;localhost'</span></em>, <em class="sig-param"><span class="n">bcc</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">attachments</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.SMTP.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send</p>
+<p>Sends an e-mail to one or many addresses</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to</strong> (<em>str|str</em><em>[</em><em>]</em>) – One or email addresses to send to</p></li>
+<li><p><strong>subject</strong> (<em>str</em>) – The email’s subject</p></li>
+<li><p><strong>body</strong> (<em>str</em>) – The main content of the email</p></li>
+<li><p><strong>from_</strong> (<em>str</em>) – The from address of the email, optional</p></li>
+<li><p><strong>bcc</strong> (<em>str|str</em><em>[</em><em>]</em>) – Blind carbon copy addresses, optional</p></li>
+<li><p><strong>attachments</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">RestOC</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, OuroborosCoding.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/RestOC.SMTP.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

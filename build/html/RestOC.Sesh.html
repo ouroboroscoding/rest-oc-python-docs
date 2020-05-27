@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>RestOC.Sesh module &#8212; RestOC 0.4.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-RestOC.Sesh">
+<span id="restoc-sesh-module"></span><h1>RestOC.Sesh module<a class="headerlink" href="#module-RestOC.Sesh" title="Permalink to this headline">¶</a></h1>
+<p>Sesh Module</p>
+<p>Handles internal sessions shared across microservices</p>
+<dl class="py function">
+<dt id="RestOC.Sesh.create">
+<code class="sig-prename descclassname">RestOC.Sesh.</code><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Sesh.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create</p>
+<p>Returns a brand new session using the ID given, if no ID is passed, one is
+generated</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The ID to use for the session</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Session</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.Sesh.init">
+<code class="sig-prename descclassname">RestOC.Sesh.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conf</span></em>, <em class="sig-param"><span class="n">expire</span><span class="o">=</span><span class="default_value">86400</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Sesh.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Init</p>
+<p>Initialises the module</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conf</strong> (<em>dict</em>) – The necessary Redis config</p></li>
+<li><p><strong>expire</strong> (<em>uint</em>) – Length in seconds for the session to remain active</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.Sesh.load">
+<code class="sig-prename descclassname">RestOC.Sesh.</code><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Sesh.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load</p>
+<p>Loads an existing session from the cache</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The unique id of an existing session</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Session</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">RestOC</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, OuroborosCoding.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/RestOC.Sesh.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1,0 +1,157 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>RestOC.DictHelper module &#8212; RestOC 0.4.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-RestOC.DictHelper">
+<span id="restoc-dicthelper-module"></span><h1>RestOC.DictHelper module<a class="headerlink" href="#module-RestOC.DictHelper" title="Permalink to this headline">¶</a></h1>
+<p>Dictionary Helper Module</p>
+<p>Several useful helper methods for use with dicts</p>
+<dl class="py function">
+<dt id="RestOC.DictHelper.clone">
+<code class="sig-prename descclassname">RestOC.DictHelper.</code><code class="sig-name descname">clone</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">src</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.DictHelper.clone" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clone</p>
+<p>Goes through the dict and any child dicts copying the values so that we
+don’t have any references</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>src</strong> (<em>dict</em>) – The source dict</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.DictHelper.combine">
+<code class="sig-prename descclassname">RestOC.DictHelper.</code><code class="sig-name descname">combine</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">first</span></em>, <em class="sig-param"><span class="n">second</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.DictHelper.combine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Combine</p>
+<p>Generates a new dict by combining the two passed, values in second will
+overwrite values in first</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>first</strong> (<em>dict</em>) – The dict to be changed/overwritten</p></li>
+<li><p><strong>second</strong> (<em>dict</em>) – The dict that will do the overwriting</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.DictHelper.eval">
+<code class="sig-prename descclassname">RestOC.DictHelper.</code><code class="sig-name descname">eval</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">src</span></em>, <em class="sig-param"><span class="n">contains</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.DictHelper.eval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Eval(uate)</p>
+<p>Goes through a dict looking for keys from contains</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>src</strong> (<em>dict</em>) – The dict we are evaluating</p></li>
+<li><p><strong>contains</strong> (<em>list</em>) – A list of values to check for, if the value is a dict
+rather than a string, epects keys to be keys pointing to further
+lists of keys</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A list of errors, or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">RestOC</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, OuroborosCoding.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/RestOC.DictHelper.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

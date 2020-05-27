@@ -1,0 +1,763 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>RestOC.Record_MySQL module &#8212; RestOC 0.4.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-RestOC.Record_MySQL">
+<span id="restoc-record-mysql-module"></span><h1>RestOC.Record_MySQL module<a class="headerlink" href="#module-RestOC.Record_MySQL" title="Permalink to this headline">¶</a></h1>
+<p>Record SQL Module</p>
+<p>Extends Record module to add support for SQL tables</p>
+<dl class="py class">
+<dt id="RestOC.Record_MySQL.Commands">
+<em class="property">class </em><code class="sig-prename descclassname">RestOC.Record_MySQL.</code><code class="sig-name descname">Commands</code><a class="headerlink" href="#RestOC.Record_MySQL.Commands" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Commands class</p>
+<p>Used to directly interface with MySQL</p>
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Commands.escape">
+<em class="property">classmethod </em><code class="sig-name descname">escape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Commands.escape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Escape</p>
+<p>Used to escape string values for the DB</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – The name of the connection to escape for</p></li>
+<li><p><strong>value</strong> (<em>str</em>) – The value to escape</p></li>
+<li><p><strong>rel</strong> (<em>str</em>) – The relationship of the server, master or slave</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Commands.execute">
+<em class="property">classmethod </em><code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em>, <em class="sig-param"><span class="n">sql</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Commands.execute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute</p>
+<p>Used to run SQL that doesn’t return any rows</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – The name of the connection to execute on</p></li>
+<li><p><strong>sql</strong> (<em>str|tuple</em>) – The SQL (or SQL plus a list) statement to run</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>uint</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Commands.insert">
+<em class="property">classmethod </em><code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em>, <em class="sig-param"><span class="n">sql</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Commands.insert" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert</p>
+<p>Handles INSERT statements and returns the new ID. To insert records
+without auto_increment it’s best to just stick to CSQL.execute()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – The name of the connection to into on</p></li>
+<li><p><strong>sql</strong> (<em>str</em>) – The SQL statement to run</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>mixed</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Commands.select">
+<em class="property">classmethod </em><code class="sig-name descname">select</code><span class="sig-paren">(</span><em class="sig-param">host</em>, <em class="sig-param">sql</em>, <em class="sig-param">seltype=&lt;ESelect.ALL: 1&gt;</em>, <em class="sig-param">field=None</em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Commands.select" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select</p>
+<p>Handles SELECT queries and returns the data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – The name of the host to select from</p></li>
+<li><p><strong>sql</strong> (<em>str</em>) – The SQL statement to run</p></li>
+<li><p><strong>seltype</strong> (<a class="reference internal" href="#RestOC.Record_MySQL.ESelect" title="RestOC.Record_MySQL.ESelect"><em>ESelect</em></a>) – The format to return the data in</p></li>
+<li><p><strong>field</strong> (<em>str</em>) – Only used by HASH_ROWS since MySQLdb has no ordereddict
+for associative rows</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>mixed</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py exception">
+<dt id="RestOC.Record_MySQL.DuplicateException">
+<em class="property">exception </em><code class="sig-prename descclassname">RestOC.Record_MySQL.</code><code class="sig-name descname">DuplicateException</code><a class="headerlink" href="#RestOC.Record_MySQL.DuplicateException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>DuplicateException class</p>
+<p>Used for raising issues with duplicate records</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="RestOC.Record_MySQL.ESelect">
+<em class="property">class </em><code class="sig-prename descclassname">RestOC.Record_MySQL.</code><code class="sig-name descname">ESelect</code><a class="headerlink" href="#RestOC.Record_MySQL.ESelect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">enum.IntEnum</span></code></p>
+<p>An enumeration.</p>
+<dl class="py attribute">
+<dt id="RestOC.Record_MySQL.ESelect.ALL">
+<code class="sig-name descname">ALL</code><em class="property"> = 1</em><a class="headerlink" href="#RestOC.Record_MySQL.ESelect.ALL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="RestOC.Record_MySQL.ESelect.CELL">
+<code class="sig-name descname">CELL</code><em class="property"> = 2</em><a class="headerlink" href="#RestOC.Record_MySQL.ESelect.CELL" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="RestOC.Record_MySQL.ESelect.COLUMN">
+<code class="sig-name descname">COLUMN</code><em class="property"> = 3</em><a class="headerlink" href="#RestOC.Record_MySQL.ESelect.COLUMN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="RestOC.Record_MySQL.ESelect.HASH">
+<code class="sig-name descname">HASH</code><em class="property"> = 4</em><a class="headerlink" href="#RestOC.Record_MySQL.ESelect.HASH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="RestOC.Record_MySQL.ESelect.HASH_ROWS">
+<code class="sig-name descname">HASH_ROWS</code><em class="property"> = 5</em><a class="headerlink" href="#RestOC.Record_MySQL.ESelect.HASH_ROWS" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt id="RestOC.Record_MySQL.ESelect.ROW">
+<code class="sig-name descname">ROW</code><em class="property"> = 6</em><a class="headerlink" href="#RestOC.Record_MySQL.ESelect.ROW" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="RestOC.Record_MySQL.Literal">
+<em class="property">class </em><code class="sig-prename descclassname">RestOC.Record_MySQL.</code><code class="sig-name descname">Literal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Literal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Used as a value that won’t be escaped or parsed</p>
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Literal.get">
+<code class="sig-name descname">get</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Literal.get" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="RestOC.Record_MySQL.Record">
+<em class="property">class </em><code class="sig-prename descclassname">RestOC.Record_MySQL.</code><code class="sig-name descname">Record</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">record</span><span class="o">=</span><span class="default_value">{}</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="RestOC.Record_Base.html#RestOC.Record_Base.Record" title="RestOC.Record_Base.Record"><code class="xref py py-class docutils literal notranslate"><span class="pre">RestOC.Record_Base.Record</span></code></a></p>
+<p>Extends the base Record class</p>
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.addChanges">
+<em class="property">classmethod </em><code class="sig-name descname">addChanges</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_id</span></em>, <em class="sig-param"><span class="n">changes</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.addChanges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add Changes</p>
+<p>Adds a record to the tables associated _changes table. Useful for
+Record types that can’t handle multiple levels and have children
+tables that shouldn’t be updated for every change in a single record</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_id</strong> (<em>mixed</em>) – The ID of the record the change is associated with</p></li>
+<li><p><strong>changes</strong> (<em>dict</em>) – The dictionary of changes to add</p></li>
+<li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.append">
+<em class="property">classmethod </em><code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_id</span></em>, <em class="sig-param"><span class="n">array</span></em>, <em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.append" title="Permalink to this definition">¶</a></dt>
+<dd><p>Append</p>
+<p>Adds an item to a given array/list for a specific record</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_id</strong> (<em>mixed</em>) – The ID of the record to append to</p></li>
+<li><p><strong>array</strong> (<em>str</em>) – The name of the field with the array</p></li>
+<li><p><strong>item</strong> (<em>mixed</em>) – The value to append to the array</p></li>
+<li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.config">
+<em class="property">classmethod </em><code class="sig-name descname">config</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Config</p>
+<p>Returns the configuration data associated with the record type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.contains">
+<em class="property">classmethod </em><code class="sig-name descname">contains</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_id</span></em>, <em class="sig-param"><span class="n">array</span></em>, <em class="sig-param"><span class="n">item</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.contains" title="Permalink to this definition">¶</a></dt>
+<dd><p>Contains</p>
+<p>Checks if a specific item exist inside a given array/list</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_id</strong> (<em>mixed</em>) – The ID of the record to check</p></li>
+<li><p><strong>array</strong> (<em>str</em>) – The name of the field with the array</p></li>
+<li><p><strong>item</strong> (<em>mixed</em>) – The value to check for in the array</p></li>
+<li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.count">
+<em class="property">classmethod </em><code class="sig-name descname">count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.count" title="Permalink to this definition">¶</a></dt>
+<dd><p>Count</p>
+<p>Returns the number of records associated with index or filter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_id</strong> (<em>mixed</em>) – The ID(s) to check</p></li>
+<li><p><strong>filter</strong> (<em>dict</em>) – Additional filter</p></li>
+<li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.create">
+<code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">conflict</span><span class="o">=</span><span class="default_value">'error'</span></em>, <em class="sig-param"><span class="n">changes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.create" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create</p>
+<p>Adds the record to the DB and returns the primary key</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>conflict</strong> (<em>str</em>) – Must be one of ‘error’, ‘ignore’, ‘replace’</p></li>
+<li><p><strong>changes</strong> (<em>dict</em>) – Data needed to store a change record, is
+dependant on the ‘changes’ config value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>mixed|None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.createMany">
+<em class="property">classmethod </em><code class="sig-name descname">createMany</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">records</span></em>, <em class="sig-param"><span class="n">conflict</span><span class="o">=</span><span class="default_value">'error'</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.createMany" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create Many</p>
+<p>Inserts multiple records at once, returning all their primary keys
+if auto_primary is true, else just returning the number of records
+inserted (or replaced if replace is set to True)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>records</strong> (<a class="reference internal" href="#RestOC.Record_MySQL.Record" title="RestOC.Record_MySQL.Record"><em>Record_MySQL.Record</em></a><em>[</em><em>]</em>) – A list of Record instances to insert</p></li>
+<li><p><strong>conflict</strong> (<em>str</em>) – Must be one of ‘error’, ‘ignore’, ‘replace’</p></li>
+<li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.delete">
+<code class="sig-name descname">delete</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">changes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.delete" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete</p>
+<p>Deletes the record represented by the instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>changes</strong> (<em>dict</em>) – Data needed to store a change record, is
+dependant on the ‘changes’ config value</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.deleteGet">
+<em class="property">classmethod </em><code class="sig-name descname">deleteGet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">index</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.deleteGet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete Get</p>
+<p>Deletes one or many records by primary key or index and returns how many
+were found/deleted</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_id</strong> (<em>mixed|mixed</em><em>[</em><em>]</em>) – The primary key(s) to delete or None for all
+records</p></li>
+<li><p><strong>index</strong> (<em>str</em>) – Used as the index instead of the primary key</p></li>
+<li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.escape">
+<em class="property">classmethod </em><code class="sig-name descname">escape</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em>, <em class="sig-param"><span class="n">type_</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.escape" title="Permalink to this definition">¶</a></dt>
+<dd><p>Escape</p>
+<p>Takes a value and turns it into an acceptable string for SQL</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – The name of the host if we need to call the server</p></li>
+<li><p><strong>type_</strong> (<em>str</em>) – The type of data to escape</p></li>
+<li><p><strong>value</strong> (<em>mixed</em>) – The value to escape</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.exists">
+<em class="property">classmethod </em><code class="sig-name descname">exists</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_id</span></em>, <em class="sig-param"><span class="n">index</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.exists" title="Permalink to this definition">¶</a></dt>
+<dd><p>Exists</p>
+<p>Returns true if the specified primary key or unique index value exists</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_id</strong> (<em>mixed</em>) – The primary key to check</p></li>
+<li><p><strong>index</strong> (<em>str</em>) – Used as the index instead of the primary key</p></li>
+<li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.fieldSet">
+<code class="sig-name descname">fieldSet</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">field</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.fieldSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Field Set</p>
+<p>Overwrites Record_Base.Record.fieldSet to allow for setting Literals,
+values that are not verified and then sent to the server as is</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>field</strong> (<em>str</em>) – The name of the field to set</p></li>
+<li><p><strong>val</strong> (<em>mixed</em>) – The value to set the field to</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>self for chaining</p>
+</dd>
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>KeyError</strong> – field doesn’t exist in the structure of the record</p></li>
+<li><p><strong>ValueError</strong> – value is not valid for the field</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.filter">
+<em class="property">classmethod </em><code class="sig-name descname">filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fields</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">orderby</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Filter</p>
+<p>Finds records based on the specific fields and values passed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>fields</strong> (<em>dict</em>) – A dictionary of field names to the values they
+should match</p></li>
+<li><p><strong>raw</strong> (<em>bool|list} -- Return raw data</em><em> (</em><em>dict</em>) – fields</p></li>
+<li><p><strong>orderby</strong> (<em>str|str</em><em>[</em><em>]</em>) – A field or fields to order the results by</p></li>
+<li><p><strong>limit</strong> (<em>int|tuple</em>) – The limit and possible starting point</p></li>
+<li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Record[]|dict[]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.get">
+<em class="property">classmethod </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">index</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">match</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">orderby</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get</p>
+<p>Returns records by primary key or index, can also be given an extra filter</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_id</strong> (<em>str|str</em><em>[</em><em>]</em>) – The primary key(s) to fetch from the table</p></li>
+<li><p><strong>index</strong> (<em>str</em>) – N/A in MySQL</p></li>
+<li><p><strong>(</strong><strong>dict} -- Additional filter</strong> (<em>filter</em>) – </p></li>
+<li><p><strong>match</strong> (<em>tuple</em>) – N/A in MySQL</p></li>
+<li><p><strong>raw</strong> (<em>bool|list} -- Return raw data</em><em> (</em><em>dict</em>) – fields</p></li>
+<li><p><strong>orderby</strong> (<em>str|str</em><em>[</em><em>]</em>) – A field or fields to order the results by</p></li>
+<li><p><strong>limit</strong> (<em>int|tuple</em>) – The limit and possible starting point</p></li>
+<li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Record|Record[]|dict|dict[]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.getChanges">
+<em class="property">classmethod </em><code class="sig-name descname">getChanges</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_id</span></em>, <em class="sig-param"><span class="n">orderby</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.getChanges" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get Changes</p>
+<p>Returns the changes record associated with the primary record and table.
+Used by Record types that have the ‘changes’ flag set</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_id</strong> (<em>mixed</em>) – The of the primary record to fetch changes for</p></li>
+<li><p><strong>orderby</strong> (<em>str|str</em><em>[</em><em>]</em>) – A field or fields to order the results by</p></li>
+<li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.processValue">
+<em class="property">classmethod </em><code class="sig-name descname">processValue</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">struct</span></em>, <em class="sig-param"><span class="n">field</span></em>, <em class="sig-param"><span class="n">value</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.processValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process Value</p>
+<p>Takes a field and a value or values and returns the proper SQL
+to look up the values for the field</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>struct</strong> (<em>dict</em>) – The structure associated with the record</p></li>
+<li><p><strong>field</strong> (<em>str</em>) – The name of the field</p></li>
+<li><p><strong>value</strong> (<em>mixed</em>) – The value as a single item, list, or dictionary</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.remove">
+<em class="property">classmethod </em><code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_id</span></em>, <em class="sig-param"><span class="n">array</span></em>, <em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.remove" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove</p>
+<p>Removes an item from a given array/list for a specific record</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>_id</strong> (<em>mixed</em>) – The ID of the record to remove from</p></li>
+<li><p><strong>array</strong> (<em>str</em>) – The name of the field with the array</p></li>
+<li><p><strong>index</strong> (<em>uint</em>) – The index of the array to remove</p></li>
+<li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">replace</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">changes</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save</p>
+<p>Updates the record in the DB and returns true if anything has changed,
+or a new revision number of the record is revisionable</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>replace</strong> (<em>bool</em>) – If true, replace all fields instead of updating</p></li>
+<li><p><strong>changes</strong> (<em>dict</em>) – Data needed to store a change record, is
+dependant on the ‘changes’ config value</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.tableCreate">
+<em class="property">classmethod </em><code class="sig-name descname">tableCreate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.tableCreate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Table Create</p>
+<p>Creates the record’s table/collection/etc in the DB</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.tableDrop">
+<em class="property">classmethod </em><code class="sig-name descname">tableDrop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.tableDrop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Table Drop</p>
+<p>Deletes the record’s table/collection/etc in the DB</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.updateField">
+<em class="property">classmethod </em><code class="sig-name descname">updateField</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">field</span></em>, <em class="sig-param"><span class="n">value</span></em>, <em class="sig-param"><span class="n">_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">index</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.updateField" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updated Field</p>
+<p>Updates a specific field to the value for an ID, many IDs, or the entire
+table</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>field</strong> (<em>str</em>) – The name of the field to update</p></li>
+<li><p><strong>value</strong> (<em>mixed</em>) – The value to set the field to</p></li>
+<li><p><strong>_id</strong> (<em>mixed</em>) – Optional ID(s) to filter by</p></li>
+<li><p><strong>index</strong> (<em>str</em>) – Optional name of the index to use instead of primary</p></li>
+<li><p><strong>filter</strong> (<em>dict</em>) – Optional filter list to decide what records get updated</p></li>
+<li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>uint – Number of records altered</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="RestOC.Record_MySQL.Record.uuid">
+<em class="property">classmethod </em><code class="sig-name descname">uuid</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Record.uuid" title="Permalink to this definition">¶</a></dt>
+<dd><p>UUID</p>
+<p>Returns a universal unique ID</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
+‘host’ the name of the host to get/set data on
+‘append’ optional postfix for dynamic DBs</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.Record_MySQL.addHost">
+<code class="sig-prename descclassname">RestOC.Record_MySQL.</code><code class="sig-name descname">addHost</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">info</span></em>, <em class="sig-param"><span class="n">update</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.addHost" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add Host</p>
+<p>Add a host that can be used by Records</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name that will be used to fetch the host credentials</p></li>
+<li><p><strong>info</strong> (<em>dict</em>) – The necessary credentials to connect to the host</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.Record_MySQL.dbCreate">
+<code class="sig-prename descclassname">RestOC.Record_MySQL.</code><code class="sig-name descname">dbCreate</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">host</span><span class="o">=</span><span class="default_value">'primary'</span></em>, <em class="sig-param"><span class="n">charset</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">collate</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.dbCreate" title="Permalink to this definition">¶</a></dt>
+<dd><p>DB Create</p>
+<p>Creates a DB on the given host</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of the DB to create</p></li>
+<li><p><strong>host</strong> (<em>str</em>) – The name of the host the DB will be on</p></li>
+<li><p><strong>charset</strong> (<em>str</em>) – Optional default charset</p></li>
+<li><p><strong>collate</strong> (<em>str</em>) – Optional default collate, charset must be set to use</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.Record_MySQL.dbDrop">
+<code class="sig-prename descclassname">RestOC.Record_MySQL.</code><code class="sig-name descname">dbDrop</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em>, <em class="sig-param"><span class="n">host</span><span class="o">=</span><span class="default_value">'primary'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.dbDrop" title="Permalink to this definition">¶</a></dt>
+<dd><p>DB Drop</p>
+<p>Drops a DB on the given host</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> (<em>str</em>) – The name of the DB to delete</p></li>
+<li><p><strong>host</strong> (<em>str</em>) – The name of the host the DB is on</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">RestOC</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, OuroborosCoding.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/RestOC.Record_MySQL.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

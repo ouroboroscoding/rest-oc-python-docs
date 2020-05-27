@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>RestOC.StrHelper module &#8212; RestOC 0.4.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-RestOC.StrHelper">
+<span id="restoc-strhelper-module"></span><h1>RestOC.StrHelper module<a class="headerlink" href="#module-RestOC.StrHelper" title="Permalink to this headline">¶</a></h1>
+<p>StrHelper Module</p>
+<p>Several useful helper methods for use with strings</p>
+<dl class="py function">
+<dt id="RestOC.StrHelper.decrypt">
+<code class="sig-prename descclassname">RestOC.StrHelper.</code><code class="sig-name descname">decrypt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.StrHelper.decrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decrypt</p>
+<p>Decrypts a string using the key and returns it. Key must be in multiples of
+16 bytes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – A key that was used to encrypt the original value</p></li>
+<li><p><strong>val</strong> (<em>str</em>) – The value to decrypt</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.StrHelper.encrypt">
+<code class="sig-prename descclassname">RestOC.StrHelper.</code><code class="sig-name descname">encrypt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">key</span></em>, <em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.StrHelper.encrypt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Encrypt</p>
+<p>Encrypts a string using the passed key and returns it. Key must be in
+multiples of 16 bytes</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – The key used to encrypt the value</p></li>
+<li><p><strong>val</strong> (<em>str</em>) – The value to encrypt and return</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.StrHelper.normalize">
+<code class="sig-prename descclassname">RestOC.StrHelper.</code><code class="sig-name descname">normalize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.StrHelper.normalize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Normalize</p>
+<p>Replaces all special alpha characters with their ascii equivalent</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>val</strong> (<em>str</em>) – The text to normalize</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.StrHelper.random">
+<code class="sig-prename descclassname">RestOC.StrHelper.</code><code class="sig-name descname">random</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">length</span><span class="o">=</span><span class="default_value">8</span></em>, <em class="sig-param"><span class="n">sets</span><span class="o">=</span><span class="default_value">'_aZ'</span></em>, <em class="sig-param"><span class="n">duplicates</span><span class="o">=</span><span class="default_value">True</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.StrHelper.random" title="Permalink to this definition">¶</a></dt>
+<dd><p>Random</p>
+<p>Generates a random string. By default this function will generate an 8
+character string using lowercase letters with possible repeating characters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>length</strong> (<em>int</em>) – Requested length of the password</p></li>
+<li><p><strong>sets</strong> (<em>str|str</em><em>[</em><em>]</em>) – A list of names from the standard sets, a string
+starting with an underscore representing one named set, or any other
+string to be used as an array of characters to chose from. If you
+want certain characters to have a greater chance of appearing, use
+them more times, e.g. twice the ‘A’s, “AABC”, or three times the
+‘B’s, “ABBBC”. Make sure not to turn off duplicates for this to be
+effective</p></li>
+<li><p><strong>duplicates</strong> (<em>bool</em>) – Defaults to True, allowing characters to be used
+more than once</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Sets:</dt><dd><p>0x:             0123456789abcdef
+0:              01234567
+10:             0123456789
+az:             abcdefghijklmnopqrstuvwxyz
+az*:    abcdefghijkmnopqrstuvwxyz
+AZ:             ABCDEFGHIJKLMNOPQRSTUVWXYZ
+AZ*:    ABCDEFGHJKLMNPQRSTUVWXYZ
+aZ:             abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
+aZ*:    abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ
+!:              <a class="reference external" href="mailto:!&#37;&#52;&#48;#$%^&amp;*-_+">!<span>&#64;</span>#$%^&amp;*-_+</a>.?</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>&gt; random(8, ‘_0x’)
+“baadbeef”</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.StrHelper.strtr">
+<code class="sig-prename descclassname">RestOC.StrHelper.</code><code class="sig-name descname">strtr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">table</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.StrHelper.strtr" title="Permalink to this definition">¶</a></dt>
+<dd><p>String Translate</p>
+<p>Port of PHP strtr (string translate)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>text</strong> (<em>str</em>) – The string to translate</p></li>
+<li><p><strong>table</strong> (<em>dict</em>) – The translation table</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">RestOC</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, OuroborosCoding.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.0.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/RestOC.StrHelper.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
