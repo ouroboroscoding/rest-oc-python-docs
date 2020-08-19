@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>RestOC.Services module &#8212; RestOC 0.4.0 documentation</title>
+    <title>RestOC.Services module &#8212; RestOC 0.5.2 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -34,16 +34,28 @@
 <span id="restoc-services-module"></span><h1>RestOC.Services module<a class="headerlink" href="#module-RestOC.Services" title="Permalink to this headline">¶</a></h1>
 <p>Services Module</p>
 <p>Tools to create and communicate with Micro Services</p>
-<dl class="py class">
+<dl class="py attribute">
 <dt id="RestOC.Services.Effect">
-<em class="property">class </em><code class="sig-prename descclassname">RestOC.Services.</code><code class="sig-name descname">Effect</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">error</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">warning</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Effect" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">RestOC.Services.</code><code class="sig-name descname">Effect</code><a class="headerlink" href="#RestOC.Services.Effect" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#RestOC.Services.Response" title="RestOC.Services.Response"><code class="xref py py-class docutils literal notranslate"><span class="pre">RestOC.Services.Response</span></code></a></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="RestOC.Services.EffectException">
+<code class="sig-prename descclassname">RestOC.Services.</code><code class="sig-name descname">EffectException</code><a class="headerlink" href="#RestOC.Services.EffectException" title="Permalink to this definition">¶</a></dt>
+<dd><p>alias of <a class="reference internal" href="#RestOC.Services.ResponseException" title="RestOC.Services.ResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">RestOC.Services.ResponseException</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="RestOC.Services.Response">
+<em class="property">class </em><code class="sig-prename descclassname">RestOC.Services.</code><code class="sig-name descname">Response</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">error</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">warning</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Response" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Represents a standard result from any/all requests</p>
 <dl class="py method">
-<dt id="RestOC.Services.Effect.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">error</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">warning</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Effect.__init__" title="Permalink to this definition">¶</a></dt>
+<dt id="RestOC.Services.Response.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">error</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">warning</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Response.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructor</p>
-<p>Initialises a new Effect instance</p>
+<p>Initialises a new Response instance</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
@@ -57,14 +69,14 @@ a code and message string</p></li>
 <dd class="field-even"><p><strong>ValueError</strong> – </p>
 </dd>
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>Effect</p>
+<dd class="field-odd"><p>Response</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="RestOC.Services.Effect.__str__">
-<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Effect.__str__" title="Permalink to this definition">¶</a></dt>
+<dt id="RestOC.Services.Response.__str__">
+<code class="sig-name descname">__str__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Response.__str__" title="Permalink to this definition">¶</a></dt>
 <dd><p>str</p>
 <p>Python magic method to return a string from the instance</p>
 <dl class="field-list simple">
@@ -75,10 +87,10 @@ a code and message string</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="RestOC.Services.Effect.dataExists">
-<code class="sig-name descname">dataExists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Effect.dataExists" title="Permalink to this definition">¶</a></dt>
+<dt id="RestOC.Services.Response.dataExists">
+<code class="sig-name descname">dataExists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Response.dataExists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Data Exists</p>
-<p>Returns True if there is data in the Effect</p>
+<p>Returns True if there is data in the Response</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>bool</p>
@@ -87,10 +99,10 @@ a code and message string</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="RestOC.Services.Effect.errorExists">
-<code class="sig-name descname">errorExists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Effect.errorExists" title="Permalink to this definition">¶</a></dt>
+<dt id="RestOC.Services.Response.errorExists">
+<code class="sig-name descname">errorExists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Response.errorExists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Error Exists</p>
-<p>Returns True if there is an error in the Effect</p>
+<p>Returns True if there is an error in the Response</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
 <dd class="field-odd"><p>bool</p>
@@ -99,41 +111,41 @@ a code and message string</p></li>
 </dd></dl>
 
 <dl class="py method">
-<dt id="RestOC.Services.Effect.fromDict">
-<em class="property">classmethod </em><code class="sig-name descname">fromDict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Effect.fromDict" title="Permalink to this definition">¶</a></dt>
+<dt id="RestOC.Services.Response.fromDict">
+<em class="property">classmethod </em><code class="sig-name descname">fromDict</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Response.fromDict" title="Permalink to this definition">¶</a></dt>
 <dd><p>From Dict</p>
-<p>Converts a dict back into an Effect</p>
+<p>Converts a dict back into an Response</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>dict</em>) – A valid dict</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Effect</p>
+<dd class="field-even"><p>Response</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="RestOC.Services.Effect.fromJSON">
-<em class="property">classmethod </em><code class="sig-name descname">fromJSON</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Effect.fromJSON" title="Permalink to this definition">¶</a></dt>
+<dt id="RestOC.Services.Response.fromJSON">
+<em class="property">classmethod </em><code class="sig-name descname">fromJSON</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">val</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Response.fromJSON" title="Permalink to this definition">¶</a></dt>
 <dd><p>From JSON</p>
-<p>Tries to convert a string made from str() back into an Effect</p>
+<p>Tries to convert a string made from str() back into an Response</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>val</strong> (<em>str</em>) – A valid JSON string</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Effect</p>
+<dd class="field-even"><p>Response</p>
 </dd>
 </dl>
 </dd></dl>
 
 <dl class="py method">
-<dt id="RestOC.Services.Effect.warningExists">
-<code class="sig-name descname">warningExists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Effect.warningExists" title="Permalink to this definition">¶</a></dt>
+<dt id="RestOC.Services.Response.warningExists">
+<code class="sig-name descname">warningExists</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Response.warningExists" title="Permalink to this definition">¶</a></dt>
 <dd><p>Warning Exists</p>
 <blockquote>
-<div><p>Returns True if there is a warning in the Effect</p>
+<div><p>Returns True if there is a warning in the Response</p>
 </div></blockquote>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -145,14 +157,14 @@ a code and message string</p></li>
 </dd></dl>
 
 <dl class="py exception">
-<dt id="RestOC.Services.EffectException">
-<em class="property">exception </em><code class="sig-prename descclassname">RestOC.Services.</code><code class="sig-name descname">EffectException</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">error</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">warning</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.EffectException" title="Permalink to this definition">¶</a></dt>
+<dt id="RestOC.Services.ResponseException">
+<em class="property">exception </em><code class="sig-prename descclassname">RestOC.Services.</code><code class="sig-name descname">ResponseException</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">error</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">warning</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.ResponseException" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
-<p>Effect Exception</p>
+<p>Response Exception</p>
 <p>Stupid python won’t let you raise anything that doesn’t extend BaseException</p>
 <dl class="py method">
-<dt id="RestOC.Services.EffectException.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">error</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">warning</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.EffectException.__init__" title="Permalink to this definition">¶</a></dt>
+<dt id="RestOC.Services.ResponseException.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">data</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">error</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">warning</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.ResponseException.__init__" title="Permalink to this definition">¶</a></dt>
 <dd><p>Constructor</p>
 <p>Dumb dumb python</p>
 <dl class="field-list simple">
@@ -165,7 +177,7 @@ a code and message string</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>EffectException</p>
+<dd class="field-even"><p>ResponseException</p>
 </dd>
 </dl>
 </dd></dl>
@@ -191,7 +203,7 @@ a code and message string</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Effect</p>
+<dd class="field-even"><p>Response</p>
 </dd>
 </dl>
 </dd></dl>
@@ -210,7 +222,7 @@ a code and message string</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Effect</p>
+<dd class="field-even"><p>Response</p>
 </dd>
 </dl>
 </dd></dl>
@@ -275,7 +287,7 @@ is first installed</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Effect</p>
+<dd class="field-even"><p>Response</p>
 </dd>
 </dl>
 </dd></dl>
@@ -294,7 +306,7 @@ is first installed</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Effect</p>
+<dd class="field-even"><p>Response</p>
 </dd>
 </dl>
 </dd></dl>
@@ -316,7 +328,7 @@ is first installed</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Effect</p>
+<dd class="field-even"><p>Response</p>
 </dd>
 </dl>
 </dd></dl>
@@ -336,7 +348,7 @@ is first installed</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Effect</p>
+<dd class="field-even"><p>Response</p>
 </dd>
 </dl>
 </dd></dl>
@@ -372,7 +384,7 @@ each other</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Effect</p>
+<dd class="field-even"><p>Response</p>
 </dd>
 </dl>
 </dd></dl>
@@ -415,7 +427,7 @@ services which will be found via the config</p>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Effect</p>
+<dd class="field-even"><p>Response</p>
 </dd>
 </dl>
 </dd></dl>
