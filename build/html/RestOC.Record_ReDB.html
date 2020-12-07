@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>RestOC.Record_ReDB module &#8212; RestOC 0.5.2 documentation</title>
+    <title>RestOC.Record_ReDB module &#8212; RestOC 0.7.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -252,7 +252,8 @@ records</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>fields</strong> (<em>dict</em>) – A dictionary of field names to the values they
 should match</p></li>
-<li><p><strong>raw</strong> (<em>bool|list} -- Return raw data</em><em> (</em><em>dict</em>) – fields</p></li>
+<li><p><strong>raw</strong> (<em>bool|list</em>) – Return raw data (dict) for all or a set list of
+fields</p></li>
 <li><p><strong>orderby</strong> (<em>str|str</em><em>[</em><em>]</em>) – A field or fields to order the results by</p></li>
 <li><p><strong>limit</strong> (<em>int|tuple</em>) – The limit and possible starting point</p></li>
 <li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
@@ -276,9 +277,10 @@ should match</p></li>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>_id</strong> (<em>str|str</em><em>[</em><em>]</em>) – The primary key(s) to fetch from the table</p></li>
 <li><p><strong>index</strong> (<em>str</em>) – Index to use instead of primary key</p></li>
-<li><p><strong>(</strong><strong>dict} -- Additional filter</strong> (<em>filter</em>) – </p></li>
+<li><p><strong>filter</strong> (<em>dict</em>) – Additional filter</p></li>
 <li><p><strong>match</strong> (<em>tuple</em>) – Name/Match filter</p></li>
-<li><p><strong>raw</strong> (<em>bool|list} -- Return raw data</em><em> (</em><em>dict</em>) – fields</p></li>
+<li><p><strong>raw</strong> (<em>bool|list</em>) – Return raw data (dict) for all or a set list of
+fields</p></li>
 <li><p><strong>orderby</strong> (<em>str|str</em><em>[</em><em>]</em>) – A field or fields to order the results by</p></li>
 <li><p><strong>limit</strong> (<em>int|tuple</em>) – The limit and possible starting point</p></li>
 <li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info

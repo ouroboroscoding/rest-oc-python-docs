@@ -12,6 +12,7 @@ Submodules
    RestOC.DictHelper
    RestOC.Errors
    RestOC.Image
+   RestOC.JSON
    RestOC.REST
    RestOC.Record_Base
    RestOC.Record_MySQL

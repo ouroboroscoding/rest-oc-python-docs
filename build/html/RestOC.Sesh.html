@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>RestOC.Sesh module &#8212; RestOC 0.5.2 documentation</title>
+    <title>RestOC.Sesh module &#8212; RestOC 0.7.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -36,13 +36,17 @@
 <p>Handles internal sessions shared across microservices</p>
 <dl class="py function">
 <dt id="RestOC.Sesh.create">
-<code class="sig-prename descclassname">RestOC.Sesh.</code><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Sesh.create" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">RestOC.Sesh.</code><code class="sig-name descname">create</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">expires</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Sesh.create" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create</p>
 <p>Returns a brand new session using the ID given, if no ID is passed, one is
 generated</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>id</strong> (<em>str</em>) – The ID to use for the session</p>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>id</strong> (<em>str</em>) – The ID to use for the session</p></li>
+<li><p><strong>expires</strong> (<em>uint</em>) – A specific expiry in seconds to override the global one
+for this session</p></li>
+</ul>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>Session</p>
