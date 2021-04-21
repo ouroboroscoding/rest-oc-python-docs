@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>RestOC.DictHelper module &#8212; RestOC 0.7.0 documentation</title>
+    <title>RestOC.DictHelper module &#8212; RestOC 0.8.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -85,6 +85,28 @@ lists of keys</p></li>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>A list of errors, or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.DictHelper.keysToInts">
+<code class="sig-prename descclassname">RestOC.DictHelper.</code><code class="sig-name descname">keysToInts</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">src</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.DictHelper.keysToInts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Keys To Ints</p>
+<p>Recursively goes through a dictionary and converts all keys that are
+numeric but stored as strings to integers. Returns a new dict and doesn’t
+alter the original.</p>
+<p>PLEASE NOTE: this method is not useful for classes, or anything complex, it
+is meant primarily for converting JSON objects which don’t allow ints as
+keys. Passing a set, tuple, or iterable class will not result in the
+expected result</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>src</strong> (<em>dict|list</em>) – The dict we are modifying, accepts lists in order to
+handle recursive following the data</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict|list</p>
 </dd>
 </dl>
 </dd></dl>

@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>RestOC.Services module &#8212; RestOC 0.7.0 documentation</title>
+    <title>RestOC.Services module &#8212; RestOC 0.8.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -44,6 +44,31 @@
 <dt id="RestOC.Services.EffectException">
 <code class="sig-prename descclassname">RestOC.Services.</code><code class="sig-name descname">EffectException</code><a class="headerlink" href="#RestOC.Services.EffectException" title="Permalink to this definition">¶</a></dt>
 <dd><p>alias of <a class="reference internal" href="#RestOC.Services.ResponseException" title="RestOC.Services.ResponseException"><code class="xref py py-class docutils literal notranslate"><span class="pre">RestOC.Services.ResponseException</span></code></a></p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="RestOC.Services.Error">
+<em class="property">class </em><code class="sig-prename descclassname">RestOC.Services.</code><code class="sig-name descname">Error</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">msg</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Error" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#RestOC.Services.Response" title="RestOC.Services.Response"><code class="xref py py-class docutils literal notranslate"><span class="pre">RestOC.Services.Response</span></code></a></p>
+<p>Shorthand form of Response(error=)</p>
+<dl class="py method">
+<dt id="RestOC.Services.Error.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">code</span></em>, <em class="sig-param"><span class="n">msg</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Services.Error.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructor</p>
+<p>Initialises a new Response instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>code</strong> (<em>uint</em>) – The error code</p></li>
+<li><p><strong>msg</strong> (<em>mixed</em>) – Optional message for more info on the error</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Error</p>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">

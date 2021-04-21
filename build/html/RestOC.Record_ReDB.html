@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>RestOC.Record_ReDB module &#8212; RestOC 0.7.0 documentation</title>
+    <title>RestOC.Record_ReDB module &#8212; RestOC 0.8.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -244,7 +244,7 @@ records</p></li>
 
 <dl class="py method">
 <dt id="RestOC.Record_ReDB.Record.filter">
-<em class="property">classmethod </em><code class="sig-name descname">filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fields</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">orderby</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_ReDB.Record.filter" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">filter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">fields</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distinct</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">orderby</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_ReDB.Record.filter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Filter</p>
 <p>Finds records based on the specific fields and values passed</p>
 <dl class="field-list simple">
@@ -254,6 +254,7 @@ records</p></li>
 should match</p></li>
 <li><p><strong>raw</strong> (<em>bool|list</em>) – Return raw data (dict) for all or a set list of
 fields</p></li>
+<li><p><strong>distinct</strong> (<em>bool</em>) – Only return distinct data</p></li>
 <li><p><strong>orderby</strong> (<em>str|str</em><em>[</em><em>]</em>) – A field or fields to order the results by</p></li>
 <li><p><strong>limit</strong> (<em>int|tuple</em>) – The limit and possible starting point</p></li>
 <li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info
@@ -268,8 +269,26 @@ fields</p></li>
 </dd></dl>
 
 <dl class="py method">
+<dt id="RestOC.Record_ReDB.Record.generateConfig">
+<em class="property">classmethod </em><code class="sig-name descname">generateConfig</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tree</span></em>, <em class="sig-param"><span class="n">special</span><span class="o">=</span><span class="default_value">'rethinkdb'</span></em>, <em class="sig-param"><span class="n">db</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_ReDB.Record.generateConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate Config</p>
+<p>Generates record specific config based on the Format-OC tree passed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tree</strong> (<em>FormatOC.Tree</em>) – the tree associated with the record type</p></li>
+<li><p><strong>special</strong> (<em>str</em>) – The special section used to identify the child info</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="RestOC.Record_ReDB.Record.get">
-<em class="property">classmethod </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">index</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">match</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">orderby</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_ReDB.Record.get" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">_id</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">index</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">filter</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">match</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">raw</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">distinct</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">orderby</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">limit</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">custom</span><span class="o">=</span><span class="default_value">{}</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_ReDB.Record.get" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get</p>
 <p>Returns records by primary key or index, can also be given an extra filter</p>
 <dl class="field-list simple">
@@ -281,6 +300,7 @@ fields</p></li>
 <li><p><strong>match</strong> (<em>tuple</em>) – Name/Match filter</p></li>
 <li><p><strong>raw</strong> (<em>bool|list</em>) – Return raw data (dict) for all or a set list of
 fields</p></li>
+<li><p><strong>distinct</strong> (<em>bool</em>) – Only return distinct data</p></li>
 <li><p><strong>orderby</strong> (<em>str|str</em><em>[</em><em>]</em>) – A field or fields to order the results by</p></li>
 <li><p><strong>limit</strong> (<em>int|tuple</em>) – The limit and possible starting point</p></li>
 <li><p><strong>custom</strong> (<em>dict</em>) – Custom Host and DB info

@@ -22,7 +22,7 @@ copyright = '2020, OuroborosCoding'
 author = 'OuroborosCoding'
 
 # The full version, including alpha/beta/rc tags
-release = '0.7.0'
+release = '0.8.0'
 
 
 # -- General configuration ---------------------------------------------------

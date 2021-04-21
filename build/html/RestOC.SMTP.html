@@ -4,7 +4,7 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>RestOC.SMTP module &#8212; RestOC 0.7.0 documentation</title>
+    <title>RestOC.SMTP module &#8212; RestOC 0.8.0 documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
@@ -34,6 +34,39 @@
 <span id="restoc-smtp-module"></span><h1>RestOC.SMTP module<a class="headerlink" href="#module-RestOC.SMTP" title="Permalink to this headline">¶</a></h1>
 <p>SMTP</p>
 <p>Wrapper for python smtp module</p>
+<dl class="py function">
+<dt id="RestOC.SMTP.Send">
+<code class="sig-prename descclassname">RestOC.SMTP.</code><code class="sig-name descname">Send</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">to</span></em>, <em class="sig-param"><span class="n">subject</span></em>, <em class="sig-param"><span class="n">opts</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.SMTP.Send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends an e-mail to one or many addresses based on a dictionary of options</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>to</strong> (<em>str|str</em><em>[</em><em>]</em>) – The email or emails to send the email to</p></li>
+<li><p><strong>subject</strong> (<em>str</em>) – The subject of the email</p></li>
+<li><p><strong>opts</strong> (<em>dict</em>) – <p>The options used to generate the email and any headers
+‘subject’: str,
+‘html’: str
+‘text’: str
+‘from’: str,
+‘reply-to’: str
+‘cc’: str|str[]
+‘bcc’: str|str[]
+‘attachments’: list(str|dict(‘body’, ‘filename’))</p>
+<blockquote>
+<div><p>If an attachment is a string, a local filename is
+assumed, else if we receive a dictionary, it should
+contain the filename of the file, and the raw body
+of the file</p>
+</div></blockquote>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py function">
 <dt id="RestOC.SMTP.init">
 <code class="sig-prename descclassname">RestOC.SMTP.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span><span class="o">=</span><span class="default_value">'localhost'</span></em>, <em class="sig-param"><span class="n">port</span><span class="o">=</span><span class="default_value">25</span></em>, <em class="sig-param"><span class="n">tls</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">user</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">passwd</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.SMTP.init" title="Permalink to this definition">¶</a></dt>
@@ -76,7 +109,8 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>to</strong> (<em>str|str</em><em>[</em><em>]</em>) – One or email addresses to send to</p></li>
 <li><p><strong>subject</strong> (<em>str</em>) – The email’s subject</p></li>
-<li><p><strong>body</strong> (<em>str</em>) – The main content of the email</p></li>
+<li><p><strong>text_body</strong> (<em>str</em>) – The text version of the main content of the email</p></li>
+<li><p><strong>html_body</strong> (<em>str</em>) – The html version of the main content of the email</p></li>
 <li><p><strong>from_</strong> (<em>str</em>) – The from address of the email, optional</p></li>
 <li><p><strong>bcc</strong> (<em>str|str</em><em>[</em><em>]</em>) – Blind carbon copy addresses, optional</p></li>
 <li><p><strong>attachments</strong> – </p></li>
