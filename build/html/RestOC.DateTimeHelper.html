@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>RestOC.Image module &mdash; RestOC 0.9.0 documentation</title>
+  <title>RestOC.DateTimeHelper module &mdash; RestOC 0.9.0 documentation</title>
   
 
   
@@ -85,7 +85,7 @@
             
               <!-- Local TOC -->
               <div class="local-toc"><ul>
-<li><a class="reference internal" href="#">RestOC.Image module</a></li>
+<li><a class="reference internal" href="#">RestOC.DateTimeHelper module</a></li>
 </ul>
 </div>
             
@@ -134,13 +134,13 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-      <li>RestOC.Image module</li>
+      <li>RestOC.DateTimeHelper module</li>
     
     
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="_sources/RestOC.Image.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/RestOC.DateTimeHelper.rst.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -153,18 +153,35 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="module-RestOC.Image">
-<span id="restoc-image-module"></span><h1>RestOC.Image module<a class="headerlink" href="#module-RestOC.Image" title="Permalink to this headline">¶</a></h1>
-<p>Image</p>
-<p>Module to manipulate images and photos, requires the Python Pillow library</p>
+  <div class="section" id="module-RestOC.DateTimeHelper">
+<span id="restoc-datetimehelper-module"></span><h1>RestOC.DateTimeHelper module<a class="headerlink" href="#module-RestOC.DateTimeHelper" title="Permalink to this headline">¶</a></h1>
+<p>Date &amp; Time Helper Module</p>
+<p>Several useful helper methods for use with dates and times</p>
 <dl class="py function">
-<dt id="RestOC.Image.apply_rotation">
-<code class="sig-prename descclassname">RestOC.Image.</code><code class="sig-name descname">apply_rotation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Image.apply_rotation" title="Permalink to this definition">¶</a></dt>
-<dd><p>Apply Rotation</p>
-<p>Uses exif data to rotate the image to the proper position</p>
+<dt id="RestOC.DateTimeHelper.age">
+<code class="sig-prename descclassname">RestOC.DateTimeHelper.</code><code class="sig-name descname">age</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dob</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.DateTimeHelper.age" title="Permalink to this definition">¶</a></dt>
+<dd><p>Age</p>
+<p>Returns the current age of someone based on today’s date and their DOB.
+This method is not %100 accurate, but it’s good enough for 99% of cases</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>image</strong> (<em>str</em>) – A raw image as a string</p>
+<dd class="field-odd"><p><strong>dob</strong> (<em>Arrow|uint|str</em>) – The date of birth of the person</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>uint</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.DateTimeHelper.date">
+<code class="sig-prename descclassname">RestOC.DateTimeHelper.</code><code class="sig-name descname">date</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.DateTimeHelper.date" title="Permalink to this definition">¶</a></dt>
+<dd><p>Date</p>
+<p>Returns a string in YYYY-MM-DD format from a timestamp, date string, or
+arrow instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>d</strong> (<em>Arrow|uint|str</em>) – The date to format</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>str</p>
@@ -173,47 +190,47 @@
 </dd></dl>
 
 <dl class="py function">
-<dt id="RestOC.Image.convertToJPEG">
-<code class="sig-prename descclassname">RestOC.Image.</code><code class="sig-name descname">convertToJPEG</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Image.convertToJPEG" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert To JPEG</p>
-<p>Changes any valid image into a JPEG</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>image</strong> (<em>str</em>) – A raw image as a string</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="RestOC.Image.info">
-<code class="sig-prename descclassname">RestOC.Image.</code><code class="sig-name descname">info</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Image.info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Info</p>
-<p>Returns information about an image: resolution, length, type, and mime</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>image</strong> (<em>str</em>) – A raw image as a string</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>dict</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py function">
-<dt id="RestOC.Image.resize">
-<code class="sig-prename descclassname">RestOC.Image.</code><code class="sig-name descname">resize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">image</span></em>, <em class="sig-param"><span class="n">dims</span></em>, <em class="sig-param"><span class="n">crop</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Image.resize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Resize</p>
-<p>Given raw data and a size, a new image is created and returned as raw data</p>
+<dt id="RestOC.DateTimeHelper.dateInc">
+<code class="sig-prename descclassname">RestOC.DateTimeHelper.</code><code class="sig-name descname">dateInc</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">days</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="n">from_</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.DateTimeHelper.dateInc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Date Increment</p>
+<p>Returns a date incremented by the given days. Use negative to decrement.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>image</strong> (<em>str</em>) – Raw image data to be loaded and resized</p></li>
-<li><p><strong>dims</strong> (<em>str|dict</em>) – New dimensions of the image, “WWWxHHH” or {“w”:, “h”:}</p></li>
-<li><p><strong>crop</strong> (<em>bool</em>) – Set to true to crop the photo rather than add whitespace</p></li>
+<li><p><strong>days</strong> (<em>int</em>) – The number of days to increment (or decrement) by</p></li>
+<li><p><strong>from_</strong> (<em>mixed</em>) – Optional, the date to increment from, else today</p></li>
 </ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>arrow.arrow.Arrow</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.DateTimeHelper.datetime">
+<code class="sig-prename descclassname">RestOC.DateTimeHelper.</code><code class="sig-name descname">datetime</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">d</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.DateTimeHelper.datetime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Date Time</p>
+<p>Returns a string in YYYY-MM-DD HH:mm:ss format from a timestamp, date
+string, or arrow instance</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>d</strong> (<em>Arrow|uint|str</em>) – The date to format</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="RestOC.DateTimeHelper.timeElapsed">
+<code class="sig-prename descclassname">RestOC.DateTimeHelper.</code><code class="sig-name descname">timeElapsed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">seconds</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.DateTimeHelper.timeElapsed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Time Elapsed</p>
+<p>Returns seconds in a human readable format</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>seconds</strong> (<em>uint</em>) – The seconds to convert to ((HH:)mm:)ss</p>
 </dd>
 <dt class="field-even">Returns</dt>
 <dd class="field-even"><p>str</p>
