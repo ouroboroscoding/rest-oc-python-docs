@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>RestOC.Record_MySQL module &mdash; RestOC 0.9.0 documentation</title>
+  <title>RestOC.Record_MySQL module &mdash; RestOC 0.9.11 documentation</title>
   
 
   
@@ -184,7 +184,7 @@
 
 <dl class="py method">
 <dt id="RestOC.Record_MySQL.Commands.execute">
-<em class="property">classmethod </em><code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em>, <em class="sig-param"><span class="n">sql</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Commands.execute" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">execute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em>, <em class="sig-param"><span class="n">sql</span></em>, <em class="sig-param"><span class="n">errcnt</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Commands.execute" title="Permalink to this definition">¶</a></dt>
 <dd><p>Execute</p>
 <p>Used to run SQL that doesn’t return any rows</p>
 <dl class="field-list simple">
@@ -192,6 +192,7 @@
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>host</strong> (<em>str</em>) – The name of the connection to execute on</p></li>
 <li><p><strong>sql</strong> (<em>str|tuple</em>) – The SQL (or SQL plus a list) statement to run</p></li>
+<li><p><strong>errcnt</strong> (<em>uint</em>) – DO NOT SET, used internally</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -202,7 +203,7 @@
 
 <dl class="py method">
 <dt id="RestOC.Record_MySQL.Commands.insert">
-<em class="property">classmethod </em><code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em>, <em class="sig-param"><span class="n">sql</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Commands.insert" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">insert</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">host</span></em>, <em class="sig-param"><span class="n">sql</span></em>, <em class="sig-param"><span class="n">errcnt</span><span class="o">=</span><span class="default_value">0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Commands.insert" title="Permalink to this definition">¶</a></dt>
 <dd><p>Insert</p>
 <p>Handles INSERT statements and returns the new ID. To insert records
 without auto_increment it’s best to just stick to CSQL.execute()</p>
@@ -211,6 +212,7 @@ without auto_increment it’s best to just stick to CSQL.execute()</p>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>host</strong> (<em>str</em>) – The name of the connection to into on</p></li>
 <li><p><strong>sql</strong> (<em>str</em>) – The SQL statement to run</p></li>
+<li><p><strong>errcnt</strong> (<em>uint</em>) – DO NOT SET, used internally</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -221,7 +223,7 @@ without auto_increment it’s best to just stick to CSQL.execute()</p>
 
 <dl class="py method">
 <dt id="RestOC.Record_MySQL.Commands.select">
-<em class="property">classmethod </em><code class="sig-name descname">select</code><span class="sig-paren">(</span><em class="sig-param">host</em>, <em class="sig-param">sql</em>, <em class="sig-param">seltype=&lt;ESelect.ALL: 1&gt;</em>, <em class="sig-param">field=None</em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Commands.select" title="Permalink to this definition">¶</a></dt>
+<em class="property">classmethod </em><code class="sig-name descname">select</code><span class="sig-paren">(</span><em class="sig-param">host</em>, <em class="sig-param">sql</em>, <em class="sig-param">seltype=&lt;ESelect.ALL: 1&gt;</em>, <em class="sig-param">field=None</em>, <em class="sig-param">errcnt=0</em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.Commands.select" title="Permalink to this definition">¶</a></dt>
 <dd><p>Select</p>
 <p>Handles SELECT queries and returns the data</p>
 <dl class="field-list simple">
@@ -232,6 +234,7 @@ without auto_increment it’s best to just stick to CSQL.execute()</p>
 <li><p><strong>seltype</strong> (<a class="reference internal" href="#RestOC.Record_MySQL.ESelect" title="RestOC.Record_MySQL.ESelect"><em>ESelect</em></a>) – The format to return the data in</p></li>
 <li><p><strong>field</strong> (<em>str</em>) – Only used by HASH_ROWS since MySQLdb has no ordereddict
 for associative rows</p></li>
+<li><p><strong>errcnt</strong> (<em>uint</em>) – DO NOT SET, used internally</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -841,6 +844,22 @@ table</p>
 </dl>
 </dd></dl>
 
+<dl class="py function">
+<dt id="RestOC.Record_MySQL.verbose">
+<code class="sig-prename descclassname">RestOC.Record_MySQL.</code><code class="sig-name descname">verbose</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">set_</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#RestOC.Record_MySQL.verbose" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verbose</p>
+<p>Sets/Gets the debug flag</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>set_</strong> (<em>bool|None</em>) – Ignore to get the current value</p>
+</dd>
+</dl>
+<dl class="simple">
+<dt>Returns</dt><dd><p>bool|None</p>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 
 
@@ -853,7 +872,7 @@ table</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, OuroborosCoding.
+        &#169; Copyright 2021, Ouroboros Coding Inc.
 
     </p>
   </div>

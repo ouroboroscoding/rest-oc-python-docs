@@ -15,16 +15,14 @@ import sys
 sys.path.insert(0, os.path.abspath('.'))
 sys.path.insert(0, os.path.abspath('../../python'))
 
-
 # -- Project information -----------------------------------------------------
 
 project = 'RestOC'
-copyright = '2021, OuroborosCoding'
-author = 'OuroborosCoding'
+copyright = '2021, Ouroboros Coding Inc'
+author = 'Ouroboros Coding Inc'
 
 # The full version, including alpha/beta/rc tags
-release = '0.9.0'
-
+release = '0.9.11'
 
 # -- General configuration ---------------------------------------------------
 

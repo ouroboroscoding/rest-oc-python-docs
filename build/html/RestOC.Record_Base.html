@@ -7,7 +7,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
-  <title>RestOC.Record_Base module &mdash; RestOC 0.9.0 documentation</title>
+  <title>RestOC.Record_Base module &mdash; RestOC 0.9.11 documentation</title>
   
 
   
@@ -184,8 +184,11 @@
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>field</strong> (<em>str</em>) – The field to delete</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>None</p>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><strong>KeyError</strong> – </p>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -238,8 +241,14 @@
 <li><p><strong>val</strong> (<em>mixed</em>) – The value of the field</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>None</p>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><strong>KeyError</strong> – </p></li>
+<li><p><strong>ValueError</strong> – </p></li>
+</ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>None</p>
 </dd>
 </dl>
 </dd></dl>
@@ -531,14 +540,14 @@ found/deleted</p>
 <li><p><strong>val</strong> (<em>mixed</em>) – The value to set the field to</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>self for chaining</p>
-</dd>
-<dt class="field-odd">Raises</dt>
-<dd class="field-odd"><ul class="simple">
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
 <li><p><strong>KeyError</strong> – field doesn’t exist in the structure of the record</p></li>
 <li><p><strong>ValueError</strong> – value is not valid for the field</p></li>
 </ul>
+</dd>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>self for chaining</p>
 </dd>
 </dl>
 </dd></dl>
@@ -891,7 +900,7 @@ table. Returns the number of records altered</p>
 
   <div role="contentinfo">
     <p>
-        &#169; Copyright 2021, OuroborosCoding.
+        &#169; Copyright 2021, Ouroboros Coding Inc.
 
     </p>
   </div>
